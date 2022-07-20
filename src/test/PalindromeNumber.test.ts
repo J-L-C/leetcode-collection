@@ -1,6 +1,5 @@
 import {describe, it} from "mocha";
 import {assert} from "chai";
-import ReverseSubstrings from "../algorithm/ReverseSubstrings";
 import PalindromeNumber from "../algorithm/PalindromeNumber";
 
 describe('PalindromeNumber', () => {
