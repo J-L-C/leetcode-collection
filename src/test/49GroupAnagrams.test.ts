@@ -1,6 +1,6 @@
 import {describe, it} from "mocha";
 import {assert} from "chai";
-import GroupAnagrams from "../algorithm/GroupAnagrams";
+import GroupAnagrams from "../algorithm/49GroupAnagrams";
 
 describe('Grouping Anagrams', () => {
 

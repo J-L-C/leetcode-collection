@@ -4,7 +4,7 @@ class GroupAnagrams {
     {
     }
 
-    group(listOfStrings: string[]): string[][] {
+    public group(listOfStrings: string[]): string[][] {
         let groups:{ [id:string] : string[] } = {}
         let result: any = [];
 
@@ -24,7 +24,7 @@ class GroupAnagrams {
         return result;
     }
 
-    sortString(sortMe: string): string {
+    public sortString(sortMe: string): string {
         let split = sortMe.split("");
         let sorted = split.sort();
         return sorted.join('');
