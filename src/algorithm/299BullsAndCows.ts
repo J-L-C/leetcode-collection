@@ -10,6 +10,7 @@
 // The hint should be formatted as "xAyB", where x is the number of bulls and y is the number of cows. Note that both secret and guess may contain duplicate digits.
 class BullsAndCows {
 
+    //TODO finish implementation.
     constructor() {
     }
 
