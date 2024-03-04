@@ -130,5 +130,57 @@ function maxDepth(root: TreeNode | null): number {
 ```
 
 
+Since I am not going to try to make the class NestedInteger, I was only able
+to code up a solution in LeetCode. I settled on a depth first search approach
+which made the most sense to me. My thought process was pretty simple, check if
+the value in the array was a number or an array. If it was an number, I could multiple
+that number by the level and add it to the sum. If the value was an array, I could
+just call my DFS function again, increment my level by one, and let the for loop
+at that level process that array which would then value * level for each element
+and call DFS on any arrays inside as well giving me a great way to keep track of 
+what level the values should be multiplied by.
+
+For runtime complexity, It looks like a O(N) as we visit each element only once.
+Space complexity would be O(1) as the only extra storage we use is storing the sum and level.
+HOWEVER! I am wrong, the space complexity would also be O(N) as we need to consider the stack
+that is used during these calls. Worst case, we have a stack of N elements so we can say O(N).
+
+```javascript
+function depthSum(nestedList: NestedInteger[]): number {
+    
+
+    let level = 1;
+    let sum = 0;
+
+    //one approach
+    // loop through the array, check to see what the item is
+    // if it is a number, perform this opperation sum += item[i] * level
+    // if it is an array -> call depthSum(item[i])
+    // sum += value * depth 
+
+
+
+   return depthFirstSearch(nestedList, level);
+
+};
+
+function depthFirstSearch(nestedList: NestedInteger[], level: number): number{
+
+     let sum = 0;
+
+     for(let value of nestedList){
+    
+        
+        if( value.isInteger() ) 
+            sum += value.getInteger() * level;
+        else
+            sum += depthFirstSearch(value.getList(),level + 1)    
+    }
+
+    return sum;
+}
+```
+
+
 
 
